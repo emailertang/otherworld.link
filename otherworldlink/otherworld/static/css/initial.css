@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-11-08 22:05:08
+ * @version $Id$
+ */
+ /*====== font color =======*/
+ .f-color-black {
+ 	color: #333;
+ }
+  .f-color-white {
+ 	color: #fff;
+ }
+@media (max-width: 768px) {
+	.navbar-default .navbar-nav > li > a {
+		font-size: 12px;
+	}
+	#usermenu {
+		display: none;
+	} 	
+  .navbar-nav > li {
+    float: left;
+  }
+ }
+/* ========header=========*/
+#navbar-l {
+  	margin-right: 52.5px;
+  	position: absolute;
+  	right: 50%;
+}
+#navbar-r {
+	margin-left: 52.5px;
+	position: absolute;
+	left: 50%;	
+}
+#navbar-m {
+	margin-left: -52.5px;
+	position: absolute;
+	left: 50%;	
+}
+.navbar-default {
+	background-color: rgba(0,0,0,0.8);
+ 	border-color: rgba(0,0,0,0.8);
+}
+.navbar-default .navbar-brand {
+	color: #fff;
+	transition: all .3s;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+	transition: all .3s;
+}
+.navbar-default .navbar-brand:hover {
+	color: red;
+}
+.navbar-default .navbar-nav > li > a:hover {
+	color: red;
+	transition: all .3s;
+}
+#usermenu {
+	float: right;
+}
+#dropdownMenu1 {
+	background-color: transparent;
+	color: #fff;
+	border-radius: 0;
+	transition: all .3s;
+}
+#usermenu {margin-top: 5px;}
+#dropdownMenu1 span {
+	margin-left: 5px;
+	font-size: 12px;
+}
+#dropdownMenu1:hover {
+	background-color: #555;	
+}
+/*=======显示/消失的淡入淡出的效果====== */
+.self-fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: .3s;
+	animation-name: fade;
+	animation-duration: .3s;
+}
+@-webkit-keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+
+/*=========== footer ============*/
+#footer-wrap {
+	background-color: #133d67;
+}
+/*#footer-content {
+	display: block;
+}*/
+#footer-content>li {
+	float: left;
+	list-style: none;
+}
+#footer-content>li>a{
+	display: inline-block;
+	padding: 10px 20px;
+	float: left;
+	font-size: 16px;
+	color: #fff;
+	line-height: 40px;
+	transition: all 0.3s;
+}
+#footer-content>li>a:hover{
+	color:#DE2121;
+}

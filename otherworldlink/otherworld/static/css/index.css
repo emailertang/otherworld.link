@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-11-11 23:04:05
+ * @version $Id$
+ */
+ /*========== index ===========*/
+/*===========  第一层头部   ===========*/
+#content-wrap-1 {
+	padding-top: 50px;
+	background-color: #133d67;
+	padding-bottom:50px; 
+}
+#content-1 h1,p {
+	color: #fff;
+}
+.page-header {
+	border-bottom: 0;
+}
+/*=========第二层头部 ================*/
+#content-wrap-2 {
+	background-color: #d1d1d1;
+	padding-bottom:50px;
+}
+#content-2 p,h1 {
+	color: #333;
+}
+.btn {
+	border-radius: 0;
+	transition: all .3s;
+}
+/*=============第三层头部============*/
+#content-wrap-3 {
+	background-color: #000;
+	padding-bottom:50px;
+}
+#content-3 h1 {
+	color: #fff;
+}
+.btn {
+	border-radius: 0;
+	transition: all .3s;
+}
+/*===========第四层头部=============*/
+#content-wrap-4 {
+	background-color: #16a085;
+	padding-bottom:50px;
+}
+#content-4 h1 {
+	color: #fff;
+}
+.btn {
+	border-radius: 0;
+	transition: all .3s;
+}
