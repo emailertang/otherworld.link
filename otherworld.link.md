@@ -22,6 +22,24 @@
 >
 > 豆瓣类型的 针对既定的话题发布信息 
 
+```python
+from shuoyar.models import Book,Author,Publisher,Book_info
+b1= Book.objects.get(title ='魔戒')
+a1 = Author.objects.create(name = '托尔金',age=34)
+a1 = Author.objects.get(name = '托尔金')
+
+bi1 = Book_info.objects.create(isdn=100001,price = 230)
+b1[0].author.add(a1)
+b1[0].save()
+a1.book_set.all()
+b1.author.all()
+Article.objects.filter(publications__id=1) #通过关系表列对象查询
+b1.book_info.isdn #一对一关系可以直接查询不用all（）
+bi1.book #一对一关系可以直接查询不用_set
+```
+
+
+
 ## 1.index.html
 
 类似于之前的俱乐部的布局，功能上要重新定义了。定义树=枢纽图，创建定义 = 创建新连接，当前定义 = 浏览当前已有的连接。
@@ -42,7 +60,7 @@
 
 ## 2.linkhub.html
 
-不采用左侧导航，
+不采用左侧导航，完全无法想象我们要的是怎样一个网站。脑袋里是一片浆糊，似乎什么都可以，什么也都不是，我们想要的还是为更多人想要的。显然最关键的是主旨和内容，来一个箴言吧。其实已经有了，连接一边的特异个体和另一边的异世界。什么是特异个体，什么又是异世界，怎么连接，连接了有什么用。
 
 
 
