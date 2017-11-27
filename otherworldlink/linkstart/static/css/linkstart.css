@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Your Name (you@example.org)
+ * @date    2017-11-11 23:04:05
+ * @version $Id$
+ */
+/*======左边的个人信息面板========*/
+.margin-top {
+    margin-top: 49px;
+    height: 1000px;
+}
+.left-panel {
+    margin-top: 20px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#panel-top-pic {
+    width: 262.5px;
+    padding-bottom: 10px;
+}
+#panel-username {
+    display: block;
+}
+.user-span {
+    display: block;
+}
+#user-pic {
+    width:56px;
+    position: absolute;
+    top: -16%;
+    left: 13%;
+}
+.panel-btn {
+line-height: 90px;
+}
+/*======左边的个人信息面板========*/
+/*======中间状态内容========*/
+#publish {
+padding: 20px;
+}
+#publish button,span {
+margin-left: 10px;
+}
+.publish-choose {
+font-size: 20px;
+}
+/*======中间状态主体========*/
+.content-wrap {
+    padding-top: 20px;
+}

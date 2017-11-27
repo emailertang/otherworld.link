@@ -1,33 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>OtherWorld.link-异世界连接</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
+{% block title %}
+    <title>OtherWorld.link-异世界连接</title>
+{% endblock %}
+{% block description %}
+    <meta name="description" content="">
+{% endblock %}
+{% block keywords %}
+    <meta name="keywords" content="">
+{% endblock %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
-<link href="../static/css/initial.css" rel="stylesheet">
-<link rel="stylesheet" href="../static/css/index.css">
+<link href="{% static 'css/initial.css'%}" rel="stylesheet">
+    {% block stylesheet %}
+        <link rel="stylesheet" href="{% static '/css/index.css'%}">
+    {% endblock %}
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<header class="navbar navbar-default navbar-fixed-top" role="navigation">
  		<div class="container">
-
 			<ul class="nav navbar-nav" id="navbar-l">
-				<li><a id="test1" href="{% url 'create_newdefine' %}">特别个人</a></li>
-				<li><a href="{% url 'current_defines' %}">中继枢纽</a></li>
+				<li><a href="{% url 'linkstart'%}">连接开始</a></li>
+				<li><a href="{% url 'linkhub'%}">连接枢纽</a></li>
 			</ul>
 			<div class="navbar-header" id="navbar-m">
 				<a class="navbar-brand" href="{% url 'index' %}">异世界连接</a>
 			</div>
 			<ul class="nav navbar-nav" id="navbar-r">
-				<li><a href="{% url 'project_details' %}">发布</a></li>
-				<li><a href="">Map</a></li>
-				<li><a href="">News</a></li>
+				<li><a href="">连接网络</a></li>
+				<li><a href="">话题</a></li>
 			</ul>
 			<div class="dropdown" id="usermenu">
 				<button class="btn dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -40,16 +47,17 @@
 					    <li role="presentation"><a href="#">设置</a></li>
 					    <li role="separator" class="divider"></li>
 					    <li role="presentation"><a href="#">注销</a></li>
-					</ul>					
+					</ul>
 			</div>
 		</div>
-	</header>
+    </header>
+{% block content %}
 	<div id="content-wrap-1">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-xs-offset-0" id="content-1">
 					<div class="page-header">
-						<h1>OtherWorld.link</h1>	
+						<h1>OtherWorld.link</h1>
 					</div>
 					<p>相对于现在生存的世界，异世界是更加有趣的世界</p>
 					<p>异世界存在于现存的世界之中，狭缝中的细微之处</p>
@@ -59,7 +67,7 @@
 					<p>这里是通往异世界的连接点和休憩之处，希望汝们能够在这里遇见去往同一个世界的同伴。即便独自一人也不会孤独，因为你身边有其他如繁星闪烁于黑夜的无数存在。</p>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 	<div id="content-wrap-2">
@@ -67,63 +75,63 @@
 			<div class="row">
 				<div class="col-xs-12 col-xs-offset-0" id="content-2">
 					<div class="page-header">
-						<h1>个人绝对领域</h1>	
+						<h1>创建个人领域</h1>
 					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							内容	<br><br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>				
+                    <div class="row">
+                        <div class="col-xs-6">
+                            {% for i in p2 %}
+                                {% if forloop.counter <= 3 %}
+                                    <p>{{ i.content }}</p>
+                                    {% if forloop.last == True %}
+                                        我是最后一个项目了
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <ul class="change_me">
+                                {% autoescape off %}
+                                {% for foo in list_1 %}
+                                    <li style="list-style: none">{{ foo }}</li>
+                                {% endfor %}
+                                    {{ html }}
+                                {% endautoescape %}
+                            </ul>
 						</div>
 					</div>
-					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a> 
+					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a>
 					<div>
-						
+
 					</div>
-					
+
 				</div>
 			</div>
-		</div>			
+		</div>
 	</div>
 	<div id="content-wrap-3">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-xs-offset-0" id="content-3">
 					<div class="page-header">
-						<h1>个人绝对领域</h1>	
+						<h1>进入连接点</h1>
 					</div>
 					<div class="row">
 						<div class="col-xs-6">
-							内容	<br><br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>				
+							<p>{{p2.0.content}}</p>
+							<p>{{p2.1.content}}</p>
+							<p>{{p2.2.content}}</p>
+							<p>{{p2.3.content}}</p>
 						</div>
 					</div>
-					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a> 	
+					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a>
 				</div>
 			</div>
-		</div>			
+		</div>
 	</div>
 	<div id="content-wrap-4">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-xs-offset-0" id="content-4">
 					<div class="page-header">
-						<h1>个人绝对领域</h1>	
+						<h1>个人绝对领域</h1>
 					</div>
 					<div class="row">
 						<div class="col-xs-6">
@@ -136,14 +144,15 @@
 							<br>
 							<br>
 							<br>
-							<br>				
+							<br>
 						</div>
 					</div>
-					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a> 	
+					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a>
 				</div>
 			</div>
-		</div>			
-	</div>	
+		</div>
+	</div>
+{% endblock %}
 	<footer class="container-fluid" id="footer-wrap">
 		<div class="container">
 				<ul id="footer-content">

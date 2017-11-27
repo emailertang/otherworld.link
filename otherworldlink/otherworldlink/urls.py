@@ -1,4 +1,4 @@
-# -*- coding: uft-8 -*-
+# -*- coding: utf-8 -*-
 """otherworldlink URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -14,11 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
-from otherworld import views
+from linkstart import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$',views.index)
+    url(r'^$',views.index,name='index'),
+    url(r'^linkstart/',views.linkstart,name='linkstart'),
+    url(r'^homeworld/(\w+)',views.homeworld,name='homeworld'),
+    url(r'^linkhub/',views.linkhub,name='linkhub'),
+    url(r'^temp/$',views.temp,name='temp'),
+    url(r'^new_temp/$',views.new_temp,name='new_temp')
 ]

@@ -1,4 +1,4 @@
-# -*- coding: uft-8 -*-
+# -*- coding: utf-8 -*-
 """
 Django settings for otherworldlink project.
 
@@ -26,7 +26,7 @@ SECRET_KEY = 'f9i=jg5(y21b!=inx*ehxjjyt+f336h@%eg8x&bu7n(p5)i!yq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'otherworld'
+    'linkstart',
+    'linkhub'
 ]
 
 MIDDLEWARE = [
@@ -125,4 +126,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "/static/")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

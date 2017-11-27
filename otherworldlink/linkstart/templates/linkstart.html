@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Linkstart-异世界连接</title>
+{% endblock %}
+{% block description %}
+    <meta name="description" content="个人空间的页面，发布状态、文章、内容，连接与被连接，构成自己的独有异世界的地方。">
+{% endblock %}
+{% block keywords %}
+    <meta name="keywords" content="个人空间、状态、社交">
+{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static '/css/linkstart.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row margin-top">
+            <div class="col-xs-3">
+                {# ==================左边栏============= #}
+                <div class="left-panel">
+                    <img id="panel-top-pic" src="http://i1.hdslb.com/bfs/space/768cc4fd97618cf589d23c2711a1d1a729f42235.png" alt="图片">
+                    <div class="col-xs-12">
+                        <a href="{% url 'temp' %}">
+                        </a>
+                        <a id="panel-username" href="{% url 'homeworld' userid %}" class="col-xs-offset-4">
+                            <img src="https://i1.hdslb.com/bfs/face/8c2f268a3b4b83038f6233b8e9525c4367711056.jpg@75Q.webp@128w_128h_75Q_1c.webp" alt="" class="img-circle" id="user-pic">
+                            <span class="user-span">{{ username }}</span>
+                            <span class="user-span">{{ userid }}</span>
+                        </a>
+
+                    </div>
+                    <a class="col-xs-6" href="{% url 'temp' %}">
+                        <span class="panel-btn">关注</span>
+                        <span class="badge">{{ linkto_num }}</span>
+                    </a>
+                    <a class="col-xs-6" href="{% url 'temp' %}">
+                        <span class="panel-btn">粉丝</span>
+                        <span class="badge">{{ linkwith_num }}</span>
+                    </a>
+                    <img src="http://i0.hdslb.com/bfs/face/7a0190e553726fc065590531d3e95952bbfb1a6f.jpg" alt="头像">
+                </div>
+            </div>
+        {# ==================中间栏============= #}
+            <div class="col-xs-7">
+                {# ==================发布============= #}
+                <div id="publish">
+                    <form action="">
+                        <div class="form-group">
+                            <textarea class="form-control" name="" id="" cols="30" rows="3" style="resize: none"></textarea>
+                        </div>
+                    </form>
+                    <div>
+                        <a class="publish-choose" href=""><span class="glyphicon glyphicon-picture"></span></a>
+                        <a class="publish-choose" href=""><span class="glyphicon glyphicon-facetime-video"></span></a>
+                        <a class="publish-choose" href=""><span class="glyphicon glyphicon-edit"></span></a>
+                        <a class="publish-choose" href=""><span class="glyphicon glyphicon-comment"></span></a>
+                        <div class="pull-right">
+                            <span class="badge">233</span>
+                            <button class="btn btn-info" type="submit">发布</button>
+                        </div>
+                    </div>
+                </div>
+                {# ==================动态导航============= #}
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="">全部</a></li>
+                    <li role="presentation"><a href="">话题</a></li>
+                    <li role="presentation"><a href="">文章</a></li>
+                </ul>
+            {# ==================动态列表============= #}
+                {% for foo in userid %}
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-2 content-wrap">
+                        <a class="content-username" href="">{{ username }}</a>
+                        <span>{{ publish_time }}</span>
+                        <div>
+                            主题内容，应该包括不同模板，单纯文字，文字+图片，文章，话题，
+                            <br>转发的模板 <br>
+                        </div>
+                        <div class="row">
+                            <a class="" href=""><span class="glyphicon glyphicon-share"></span></a>
+                            <a href=""><span class="glyphicon glyphicon-comment"></span></a>
+                            <a href=""><span class="glyphicon glyphicon-thumbs-up"></span></a>
+                        </div>
+                    </div>
+                    <img class="content-user-pic" src="https://i1.hdslb.com/bfs/face/045732e87e2ad7c3cc687b823e42c1239f73e71e.jpg@75Q.webp@128w_128h_75Q_1c.webp" alt="头像2">
+                </div>
+                {% endfor %}
+            </div>
+
+
+            {# ==================右边栏============= #}
+            <div class="col-xs-2">
+                右边的边栏
+            </div>
+        </div>
+    </div>
+{% endblock %}

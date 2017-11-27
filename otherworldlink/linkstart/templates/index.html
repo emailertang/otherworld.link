@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+{% endblock %}
+{% block content %}
+	<div id="content-wrap-1">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-xs-offset-0" id="content-1">
+					<div class="page-header">
+						<h1>{{ p0.0.title }}</h1>
+					</div>
+                    {% for foo in p0 %}
+                        <p>{{ foo.content }}</p>
+                    {% endfor %}
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div id="content-wrap-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-xs-offset-0" id="content-2">
+					<div class="page-header">
+						<h1>{{ p1.0.title }}</h1>
+					</div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            {% for i in p1 %}
+                                {% if forloop.counter <= 3 %}
+                                    <p>{{ i.content }}</p>
+                                    {% if forloop.last == True %}
+                                        我是最后一个项目了
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <ul class="change_me">
+                                {% autoescape off %}
+                                {% for foo in list_1 %}
+                                    <li style="list-style: none">{{ foo }}</li>
+                                {% endfor %}
+                                    {{ html }}
+                                {% endautoescape %}
+                            </ul>
+						</div>
+					</div>
+					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a> 
+					<div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>			
+	</div>
+	<div id="content-wrap-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-xs-offset-0" id="content-3">
+					<div class="page-header">
+						<h1>{{ p2.0.title }}</h1>
+					</div>
+					<div class="row">
+                        <div class="col-xs-6">
+                            {% for foo in p2 %}
+                                {% if forloop.counter <= 4 %}
+                                    <p>{{ foo.content }}</p>
+                                {% endif %}
+                            {% endfor %}
+						</div>
+					</div>
+					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a> 	
+				</div>
+			</div>
+		</div>			
+	</div>
+	<div id="content-wrap-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-xs-offset-0" id="content-4">
+					<div class="page-header">
+						<h1>个人绝对领域</h1>	
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							内容	<br><br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>				
+						</div>
+					</div>
+					<a type="button" class="btn btn-danger" href="">创建属于你的个人领域</a> 	
+				</div>
+			</div>
+		</div>			
+	</div>	
+{% endblock %}

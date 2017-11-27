@@ -37,3 +37,6 @@
 .comment-btn {
 	float: right;
 }
+.media-body p {
+	min-height: 30px;
+}
