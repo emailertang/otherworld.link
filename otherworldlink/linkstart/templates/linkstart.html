@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static '/css/linkstart.css' %}">
 {% endblock %}
 {% block content %}
+    <div id="content-wrap">
     <div class="container">
         <div class="row margin-top">
             <div class="col-xs-3">
@@ -46,7 +47,7 @@
                 <div id="publish">
                     <form action="">
                         <div class="form-group">
-                            <textarea class="form-control" name="" id="" cols="30" rows="3" style="resize: none"></textarea>
+                            <textarea class="form-control" name="" id="" cols="" rows="3" style="resize: none"></textarea>
                         </div>
                     </form>
                     <div>
@@ -61,19 +62,21 @@
                     </div>
                 </div>
                 {# ==================动态导航============= #}
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs nav-wrap">
                     <li role="presentation"><a href="">全部</a></li>
                     <li role="presentation"><a href="">话题</a></li>
                     <li role="presentation"><a href="">文章</a></li>
                 </ul>
             {# ==================动态列表============= #}
                 {% for foo in userid %}
-                <div class="row">
-                    <div class="col-xs-10 col-xs-offset-2 content-wrap">
+                <div class="content-wrap">
+                    <div class="col-xs-10 col-xs-offset-2">
                         <a class="content-username" href="">{{ username }}</a>
                         <span>{{ publish_time }}</span>
                         <div>
-                            主题内容，应该包括不同模板，单纯文字，文字+图片，文章，话题，
+                            <p>
+                                主题内容，应该包括不同模板，单纯文字(直接显示)，文字+图片（增加一个图片的标签），文章（做一个盒子链接到文章的缩略图），话题（同上），
+                            </p>
                             <br>转发的模板 <br>
                         </div>
                         <div class="row">
@@ -82,7 +85,7 @@
                             <a href=""><span class="glyphicon glyphicon-thumbs-up"></span></a>
                         </div>
                     </div>
-                    <img class="content-user-pic" src="https://i1.hdslb.com/bfs/face/045732e87e2ad7c3cc687b823e42c1239f73e71e.jpg@75Q.webp@128w_128h_75Q_1c.webp" alt="头像2">
+                    <img class="content-user-pic img-circle" src="https://i1.hdslb.com/bfs/face/045732e87e2ad7c3cc687b823e42c1239f73e71e.jpg@75Q.webp@128w_128h_75Q_1c.webp" alt="头像2">
                 </div>
                 {% endfor %}
             </div>
@@ -93,5 +96,6 @@
                 右边的边栏
             </div>
         </div>
+    </div>
     </div>
 {% endblock %}

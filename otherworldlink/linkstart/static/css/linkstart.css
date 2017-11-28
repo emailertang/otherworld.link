@@ -6,6 +6,9 @@
  * @version $Id$
  */
 /*======左边的个人信息面板========*/
+#content-wrap {
+    background: #b4daf0;
+}
 .margin-top {
     margin-top: 49px;
     height: 1000px;
@@ -16,6 +19,7 @@
     -moz-border-radius: 8px;
     border-radius: 8px;
     overflow: hidden;
+    background: #fff;
 }
 #panel-top-pic {
     width: 262.5px;
@@ -39,15 +43,34 @@ line-height: 90px;
 /*======左边的个人信息面板========*/
 /*======中间状态内容========*/
 #publish {
-padding: 20px;
+    margin-top: 20px;
+    padding:20px;
+    background: #fff;
+    border-radius: 8px;
 }
 #publish button,span {
-margin-left: 10px;
+    margin-left: 10px;
 }
 .publish-choose {
-font-size: 20px;
+    font-size: 20px;
+}
+.nav-wrap {
+    margin-top:10px;
+    background: #fff;
+    border-radius: 8px;
 }
 /*======中间状态主体========*/
 .content-wrap {
+    position: relative;
+    margin-top: 10px;
     padding-top: 20px;
+    height:300px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.content-user-pic {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width:56px;
 }
